@@ -1,5 +1,5 @@
 //USERNAME CHECK
-function checkIfAvailable(userInput, button, infobox, successClass, errorClass, successMessage, errorMessage, databaseColName){
+function checkIfAvailable(userInput, button, infobox, successClass, errorClass, successMessage, errorMessage, databaseColName, pathToCheckValidatePhp){
     //ASSIGN VARIABLE
     var ju = '#'+userInput;
     var jb = '#'+button;
@@ -10,7 +10,7 @@ function checkIfAvailable(userInput, button, infobox, successClass, errorClass, 
 
     if(u.length > 0){
         //HTTP
-        $.get('php/validate/check.validate.php', {
+        $.get(pathToCheckValidatePhp, {
             task: 'checkExists',
             databaseColName: databaseColName,
             userInput: u
