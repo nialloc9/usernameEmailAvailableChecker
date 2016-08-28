@@ -12,7 +12,7 @@ This is designed to check if a username or email is already in use but also is a
 7. Change the information in php/utilities/connect.utilities.php to access your database.
 5. Call the following function.
 
-        checkIfAvailable(userInput, button, infobox, successClass, errorClass, successMessage, errorMessage, databaseColName);
+        checkIfAvailable(userInput, button, infobox, successClass, errorClass, successMessage, errorMessage, databaseColName, pathToCheckValidatePhp);
         
 
 # Function Parameters
@@ -33,18 +33,20 @@ errorMessage: The message you want to render if the data is in use.
 
 databaseColName: Name of the column you want to check in the database. e.g username
 
+pathToCheckValidatePhp: The path to the check.validate.php file from your root directory
+
 # Example
 
          $(document).ready(function(){
 
             //CHECK USERNAME
             $('#checkUsername').bind("keyup change", function(e) {
-                checkIfAvailable('checkUsername', 'checkUsernameButton', 'checkUsernameInfo', 'success-message', 'error-message', 'Username Available', 'Username Unavailable', 'username');
+                checkIfAvailable('checkUsername', 'checkUsernameButton', 'checkUsernameInfo', 'success-message', 'error-message', 'Username Available', 'Username Unavailable', 'username', 'php/validate/check.validate.php');
             });
 
             //CHECK EMAIL
             $('#checkEmail').bind("keyup change", function(e) {
-                checkIfAvailable('checkEmail', 'checkEmailButton', 'checkEmailInfo', 'success-message', 'error-message', 'Email Available', 'Email Unavailable', 'email');
+                checkIfAvailable('checkEmail', 'checkEmailButton', 'checkEmailInfo', 'success-message', 'error-message', 'Email Available', 'Email Unavailable', 'email', 'php/validate/check.validate.php');
             });
         });
         
