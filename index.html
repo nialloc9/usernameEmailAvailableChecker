@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Username And Email Availability Check</title>
+
+    <!-- CSS STYLES -->
+    <link rel="stylesheet" href="public/css/styles.css">
+
+    <!-- JQUERY -->
+    <script type="text/javascript" src="public/lib/jquery.js"></script>
+
+    <!-- JS VALIDATE -->
+    <script src="public/js/validate/check.validate.js"></script>
+
+    <!-- JS CUSTOM -->
+    <script>
+        $(document).ready(function(){
+
+            //CHECK USERNAME
+            $('#checkUsername').bind("keyup change", function(e) {
+                checkIfAvailable('checkUsername', 'checkUsernameButton', 'checkUsernameInfo', 'success-message', 'error-message', 'Username Available', 'Username Unavailable', 'username');
+            });
+
+            //CHECK EMAIL
+            $('#checkEmail').bind("keyup change", function(e) {
+                checkIfAvailable('checkEmail', 'checkEmailButton', 'checkEmailInfo', 'success-message', 'error-message', 'Email Available', 'Email Unavailable', 'email');
+            });
+        });
+    </script>
+</head>
+<body>
+    <h3>Check Username</h3><br>
+    <input type="text" id="checkUsername"/><p id="checkUsernameInfo"></p><br>
+    <input type="button" id="checkUsernameButton" value="Username Button" disabled/>
+    <br><br>
+
+    <h3>Check Email</h3>
+    <input type="email" id="checkEmail"/><p id="checkEmailInfo"></p><br>
+    <input type="button" id="checkEmailButton" value="Email Button" disabled/>
+</body>
+</html>
