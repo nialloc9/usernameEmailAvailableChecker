@@ -11,23 +11,10 @@
     <script type="text/javascript" src="public/lib/jquery.js"></script>
 
     <!-- JS VALIDATE -->
-    <script src="public/js/validate/check.validate.js"></script>
+    <script type="text/javascript" src="public/js/validate/check.validate.js"></script>
 
     <!-- JS CUSTOM -->
-    <script>
-        $(document).ready(function(){
-
-            //CHECK USERNAME
-            $('#checkUsername').bind("keyup change", function(e) {
-                checkIfAvailable('checkUsername', 'checkUsernameButton', 'checkUsernameInfo', 'success-message', 'error-message', 'Username Available', 'Username Unavailable', 'username', 'php/validate/check.validate.php');
-            });
-
-            //CHECK EMAIL
-            $('#checkEmail').bind("keyup change", function(e) {
-                checkIfAvailable('checkEmail', 'checkEmailButton', 'checkEmailInfo', 'success-message', 'error-message', 'Email Available', 'Email Unavailable', 'email', 'php/validate/check.validate.php');
-            });
-        });
-    </script>
+    <script type="text/javascript" src="public/js/index.js"></script>
 </head>
 <body>
     <h3>Check Username</h3><br>
